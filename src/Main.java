@@ -1,49 +1,56 @@
+import java.util.Arrays;
+
 public class Main {
+    public Main() {
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("TASK 1");
+        int[] numbers = new int[]{8, 3, 2, 6, 9};
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+        int max_val = numbers[0];
+        int min = numbers[0];
 
-        int i = 1;
-        while (i<5) {
-            System.out.print(i); i++;
+        for(int i = 1; i < numbers.length; ++i) {
+            if (numbers[i] > max_val) {
+                max_val = numbers[i];
+            } else if (numbers[i] < min) {
+                min = numbers[i];
+            }
         }
 
-        System.out.println();
+        System.out.println("Difference between the largest and smallest values of the said array is: " + (max_val - min));
+        System.out.println("TASK 2");
+        int[] Array = new int[]{10, 6, -5, 3, 17, 7};
+        int Array_size = Array.length;
+        if (Array_size < 2) {
+            System.out.println("Array size is less than two.");
+        } else {
+            int second_element = Integer.MAX_VALUE;
+            int first_element = Integer.MAX_VALUE;
 
-        for (int a = 1; a<5; a++){
-            System.out.print(a);
+            for(int i = 0; i < Array_size; ++i) {
+                if (Array[i] < first_element) {
+                    second_element = first_element;
+                    first_element = Array[i];
+                } else if (Array[i] < second_element && Array[i] != first_element) {
+                    second_element = Array[i];
+                }
+            }
+
+            if (second_element == Integer.MAX_VALUE) {
+                System.out.println("No second smallest element.");
+            } else {
+                System.out.println("The smallest element is " + first_element + " and the second smallest element is " + second_element + ".");
+            }
+
+            System.out.println("TASK 3");
+            double x = 2.0;
+            double y = 5.0;
+            double xSquared = Math.pow(x, 2.0);
+            double expressionSquared = Math.pow(4.0 * y / 5.0 - x, 2.0);
+            double result = xSquared + expressionSquared;
+            System.out.println("The result of the expression is: " + result);
         }
-
-        System.out.println();
-
-        //Primitive Data Types
-        byte myByte = 23;
-        System.out.println("My byte is " + myByte);
-
-        short myShort = 1000;
-        System.out.println("My short is " + myShort);
-
-        int myInt = 2380000;
-        System.out.println("My int is " + myInt);
-
-        long myLong = 50234568l;
-        System.out.println("My long is " + myLong);
-
-        float myFloat = 1.2345f;
-        double myDouble = 10.765;
-        boolean myBoolean = true;
-        char myChar = 97;
-        System.out.println("My float is " + myFloat);
-        System.out.println("My double is " + myDouble);
-        System.out.println("My boolean is " + myBoolean);
-        System.out.println("My char is " + myChar);
-
-        myInt = 2365;
-        System.out.println("My int is " + myInt);
-
-//      STRINGS
-
-        String myString = "Hello to everyone! ";
-                System.out.println(myString);
-
     }
 }
